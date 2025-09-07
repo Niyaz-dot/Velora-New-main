@@ -348,7 +348,7 @@
             margin-top: -42.2rem;
             /* align-items: center; */
             place-items: center;
-            justify-content: end;
+            /* justify-content: end; */
             /* justify-content: start; */
         }
     }

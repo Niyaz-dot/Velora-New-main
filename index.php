@@ -18,22 +18,38 @@
     margin-top: 6rem;
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 779px) {
+
+    .services-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      width: 98%;
+      margin-left: 0;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
     .services-wrapper {
-      max-width: 60%;
-      width: 60%;
+      max-width: 100%;
+      width: 100%;
       padding: 0 1.5rem;
-      margin-left: 2rem;
-      margin-top: 4rem;
+      margin: 1rem auto;
+      /* centers it horizontally */
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media only screen and (min-width: 780px) and (max-width: 1024px) {
     .services-wrapper {
-      max-width: 86%;
-      width: 86%;
+      max-width: 113%;
+      width: 100%;
       padding: 0 1.5rem;
-      margin-left: 2rem;
+      margin-left: -1rem;
       margin-top: 4rem;
     }
   }
@@ -46,7 +62,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 600;
     margin-bottom: 2rem;
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
   }
 
   .services-header h2 {
@@ -77,7 +93,7 @@
     gap: 2rem;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 781px) {
     .services-header {
       flex-direction: row;
       text-align: left;
@@ -163,20 +179,78 @@
   }
 
   /* Mobile Responsive Styles */
-  @media screen and (max-width: 768px) {
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+  @media screen and (max-width: 780px) {
 
-      grid-template-columns: repeat(2, 1fr);
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            background-color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 1.5rem;
+            height: 7rem;
+            position: relative;
+            border-radius: 1.5rem;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            position: absolute;
+            top: 18%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .imageIcon {
+            width: 3rem;
+            display: flex;
+            height: auto;
+            justify-content: center;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            display: flex;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .card p {
+            color: #4a5568;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+            width: 100%;
+            /* take full width of parent */
+            text-align: center;
+            /* center the text inside */
+            margin: 0 auto;
+            /* ensure no side offset */
+        }
+
+
     }
 
-
-  }
 
 
   .view-all-button {
