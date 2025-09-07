@@ -213,7 +213,7 @@ nav {
         <ul>
           <li><a href="index.php">Find Care</a></li>
           <li><a href="Our Services.php">Our Services</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="About Us.php">About Us</a></li>
           <li><button class="btn">Hire Us</button></li>
         </ul>
       </div>

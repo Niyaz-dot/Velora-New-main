@@ -94,137 +94,90 @@
     }
   }
 
+  .imageIcon {
+    width: 4rem;
+    height: auto;
+  }
+
+  .page-container {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7fafc;
+    padding: 2rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
   .card {
-    background-color: #ffffff;
-    padding: 6rem;
-    gap: 5rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease-in-out;
-    text-align: start;
-  }
-  @media (max-width: 500px) {
-    .card {
-       background-color: #ffffff;
-      padding: 1rem;
-      width: 20rem;
-      gap: 3rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease-in-out;
-      /* margin-left: 3rem; */
-      text-align: center;
-      align-items: center;
-    }
-  }
-
-  @media (min-width: 501px) and (max-width: 768px) {
-    .services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-items: center; /* This will center the cards horizontally */
-}
-    .card {
-      background-color: white;
-      padding: 1rem;
-      width: 20rem;
-      gap: 3rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease-in-out;
-      margin-left: 3rem;
-      text-align: center;
-      align-items: center;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .card {
-      background-color: #ffffff;
-      padding: 2rem;
-      gap: 1rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease-in-out;
-      margin-left: -1rem;
-      text-align: center;
-      align-items: start !important;
-    }
+    border: 1px solid #e2e8f0;
+    background-color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
   }
 
   .card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
-  .card-icon {
+  .icon-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
     border-radius: 9999px;
-    /* margin: 0 auto 1.5rem auto; */
-    border: 2px solid;
-  }
-
-  @media (max-width: 768px) {
-    .card-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 9999px;
-      margin: 0 auto 1.5rem auto;
-      border: 2px solid;
-    }
-  }
-
-  .card-icon.purple {
-    background-color: #f3e8ff;
-    border-color: #e9d5ff;
-  }
-
-  .card-icon.purple svg {
-    color: #9333ea;
-  }
-
-  .card-icon.green {
-    background-color: #dcfce7;
-    border-color: #bbf7d0;
-  }
-
-  .card-icon.green svg {
-    color: #16a34a;
-  }
-
-  .card-icon.blue {
-    background-color: #dbeafe;
-    border-color: #bfdbfe;
-  }
-
-  .card-icon.blue svg {
-    color: #3b82f6;
+    margin-bottom: 1rem;
   }
 
   .card h3 {
     font-size: 1.25rem;
-    font-weight: 700;
-    color: #111827;
+    font-weight: 600;
+    color: #1a202c;
     margin-bottom: 0.5rem;
   }
 
   .card p {
-    font-size: 1rem;
-    color: #6b7280;
-    transition: transform 0.3s ease-in-out;
+    color: #4a5568;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
   .card:hover p {
-    transform: scale(1.1);
+    opacity: 1;
+    max-height: 100px;
+    /* A large enough value to accommodate the text */
+    margin-top: 0.5rem;
   }
+
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+  }
+
 
   .view-all-button {
     display: block;
@@ -426,7 +379,7 @@
   /* Small Mobile Devices */
   @media screen and (max-width: 480px) {
     .page-container {
-        background-color: white;
+      background-color: white;
       height: 30rem;
     }
 
@@ -508,7 +461,7 @@
   <!-- Top Menu -->
   <?php include './Includes/Topmenu.php'; ?>
 
-  
+
   <!-- Main Content -->
   <section class="hero">
     <div class="hero-content">
@@ -545,43 +498,39 @@
         and trust.
       </p>
     </div>
+    <div class="page-container">
+      <div class="grid-container">
 
-    <!-- Services Cards -->
-    <div class="services-grid">
-      <!-- Personal Care Card -->
-      <div class="card">
-        <div class="card-icon purple"  style=" color: #855FCE; font-size: 30px;">
-             <i class="fa-solid fa-hand-holding-medical"></i>
+        <!-- Personal Care Card -->
+        <div class="card">
+          <div class="icon-wrapper" style="background-color: #F1E9FF; color: #855FCE; font-size: 30px;">
+            <img src="./Assests/Images/icon personal care.png" alt="Two people shaking hands" class="imageIcon">
+          </div>
+          <h3>Personal Care:</h3>
+          <p>Assistance with daily activities like bathing, dressing, grooming, and toileting.</p>
         </div>
-        <h3>Personal Care:</h3>
-        <p>
-          Assistance with daily activities like bathing, dressing, grooming, and toileting.
-        </p>
-      </div>
 
-      <!-- Companion Care Card -->
-      <div class="card">
-        <div class="card-icon green" style="color: #27AE60; font-size: 30px;">
-                    <i class="fa-solid fa-hands-bubbles"></i>
+        <!-- Companion Care Card -->
+        <div class="card">
+          <div class="icon-wrapper" style="background-color: #E6F3E9; color: #27AE60; font-size: 30px;">
+            <img src="./Assests/Images/icon companian car.png" alt="Two people shaking hands" class="imageIcon">
+          </div>
+          <h3>Companion Care</h3>
+          <p>Emotional and social support through companionship, engaging in hobbies, watching TV, or simply
+            chatting.</p>
         </div>
-        <h3>Companion Care</h3>
-        <p>
-          Emotional and social support through companionship, engaging in hobbies, watching TV, or simply chatting.
-        </p>
-      </div>
 
-      <!-- Homemaker Services Card -->
-      <div class="card">
-        <div class="card-icon blue" style="color: #2F80ED; font-size: 30px;">
-         <i class="fa-solid fa-house-chimney-crack"></i>
+        <!-- Homemaker Services Card -->
+        <div class="card">
+          <div class="icon-wrapper" style="background-color: #E2F2FF; color: #2F80ED; font-size: 30px;">
+            <img src="./Assests/Images/icon homemaker services.png" alt="Two people shaking hands" class="imageIcon">
+          </div>
+          <h3>Homemaker Services</h3>
+          <p>Household tasks including light cleaning, dusting, vacuuming, laundry, and meal planning and
+            preparation.</p>
         </div>
-        <h3>Homemaker Services</h3>
-        <p>
-          Household tasks including light cleaning, dusting, vacuuming, laundry, and meal planning and preparation.
-        </p>
       </div>
     </div>
-
     <!-- "View All" Button -->
     <a href="#" class="view-all-button">
       View All
@@ -601,8 +550,7 @@
     <div class="image-section">
       <div class="image-wrapper">
         <img src="./Assests/Images/image-02-1.png.png" alt="Two people shaking hands" class="image-main">
-        <img src="./Assests/Images/image-01-1.png.png" alt="A hand holding a patient's arm"
-          class="image-overlay">
+        <img src="./Assests/Images/image-01-1.png.png" alt="A hand holding a patient's arm" class="image-overlay">
       </div>
     </div>
 

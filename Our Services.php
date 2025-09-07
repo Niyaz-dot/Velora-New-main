@@ -18,7 +18,7 @@
         background: url("Assests/Images/HeroSection.jpeg");
         /* background-color: #27AE60; */
         background-size: cover;
-        background-position: center;
+        background-position: right;
         display: flex;
         align-items: center;
         padding-left: 10%;
@@ -103,6 +103,11 @@
         margin-bottom: 1rem;
     }
 
+    .imageIcon {
+        width: 4rem;
+        height: auto;
+    }
+
     .card h3 {
         font-size: 1.25rem;
         font-weight: 600;
@@ -125,39 +130,95 @@
         margin-top: 0.5rem;
     }
 
-/* Mobile Responsive Styles */
-@media screen and (max-width: 768px) {
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 80rem;
-        margin-left: auto;
-        margin-right: auto;
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 768px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
 
-        grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
     }
 
 
-}
+
+    /* Small Mobile Devices */
+    @media screen and (max-width: 480px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card {
+            border: 1px solid #e2e8f0;
+            background-color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 1.5rem;
+            height: 7rem;
+            position: relative;
+            border-radius: 1.5rem;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            position: absolute;
+            top: 18%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .imageIcon {
+            width: 3rem;
+            display: flex;
+            height: auto;
+            justify-content: center;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            display: flex;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .card p {
+            color: #4a5568;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+            width: 100%;
+            /* take full width of parent */
+            text-align: center;
+            /* center the text inside */
+            margin: 0 auto;
+            /* ensure no side offset */
+        }
 
 
-
-/* Small Mobile Devices */
-@media screen and (max-width: 480px) {
-.grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 80rem;
-        margin-left: auto;
-        margin-right: auto;
-
-        grid-template-columns: repeat(1, 1fr);
     }
-}
-
-
 </style>
 
 <body>
@@ -184,7 +245,7 @@
             <!-- Personal Care Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #F1E9FF; color: #855FCE; font-size: 30px;">
-                    <i class="fa-solid fa-hand-holding-medical"></i>
+                    <img src="./Assests/Images/icon personal care.png" alt="Two people shaking hands" class="imageIcon">
                 </div>
                 <h3>Personal Care:</h3>
                 <p>Assistance with daily activities like bathing, dressing, grooming, and toileting.</p>
@@ -193,7 +254,7 @@
             <!-- Companion Care Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E6F3E9; color: #27AE60; font-size: 30px;">
-                    <i class="fa-solid fa-hands-bubbles"></i>
+                    <img src="./Assests/Images/icon companian car.png" alt="Two people shaking hands" class="imageIcon">
                 </div>
                 <h3>Companion Care</h3>
                 <p>Emotional and social support through companionship, engaging in hobbies, watching TV, or simply
@@ -203,7 +264,8 @@
             <!-- Homemaker Services Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E2F2FF; color: #2F80ED; font-size: 30px;">
-                    <i class="fa-solid fa-house-chimney-crack"></i>
+                    <img src="./Assests/Images/icon homemaker services.png" alt="Two people shaking hands"
+                        class="imageIcon">
                 </div>
                 <h3>Homemaker Services</h3>
                 <p>Household tasks including light cleaning, dusting, vacuuming, laundry, and meal planning and
@@ -213,7 +275,7 @@
             <!-- Respite Care Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #F1E9FF; color: #855FCE; font-size: 30px;">
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <img src="./Assests/Images/icon respite care.png" alt="Two people shaking hands" class="imageIcon">
                 </div>
                 <h3>Respite Care</h3>
                 <p>Temporary care provided to relieve primary family caregivers, allowing them to take a break.</p>
@@ -222,7 +284,7 @@
             <!-- Transportation Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E6F3E9; color: #27AE60; font-size: 30px;">
-                    <i class="fa-solid fa-car"></i>
+                    <img src="./Assests/Images/icon traportatiopn.png" alt="Two people shaking hands" class="imageIcon">
                 </div>
                 <h3>Transportation</h3>
                 <p>Driving to and from medical appointments, grocery stores, and social events.</p>
@@ -231,7 +293,8 @@
             <!-- Errands & Shopping Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E2F2FF; color: #2F80ED; font-size: 30px;">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <img src="./Assests/Images/icon errands and shopping.png" alt="Two people shaking hands"
+                        class="imageIcon">
                 </div>
                 <h3>Errands & Shopping</h3>
                 <p>Assistance with grocery shopping and other household errands.</p>
@@ -240,7 +303,8 @@
             <!-- Medication Reminders Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #F1E9FF; color: #855FCE; font-size: 30px;">
-                    <i class="fa-solid fa-pills"></i>
+                    <img src="./Assests/Images/icon medication reminder.png" alt="Two people shaking hands"
+                        class="imageIcon">
                 </div>
                 <h3>Medication Reminders</h3>
                 <p>Reminding individuals to take their prescribed medications at the appropriate times.</p>
@@ -249,7 +313,7 @@
             <!-- Pet Care Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E6F3E9; color: #27AE60; font-size: 30px;">
-                    <i class="fa-solid fa-paw"></i>
+                    <img src="./Assests/Images/icon petcare.png" alt="Two people shaking hands" class="imageIcon">
                 </div>
                 <h3>Pet Care</h3>
                 <p>Feeding, watering, and providing short walks for household pets.</p>
@@ -258,7 +322,8 @@
             <!-- Light Housekeeping Card -->
             <div class="card">
                 <div class="icon-wrapper" style="background-color: #E2F2FF; color: #2F80ED; font-size: 30px;">
-                    <i class="fa-solid fa-house-fire"></i>
+                    <img src="./Assests/Images/icon light house keeping.png" alt="Two people shaking hands"
+                        class="imageIcon">
                 </div>
                 <h3>Light Housekeeping</h3>
                 <p>Maintaining a clean and orderly home environment.</p>
